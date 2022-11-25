@@ -179,7 +179,7 @@ Optional command for deleting existing rules.
   sudo ufw delete [row index of unwanted rule]
   ```
 
-Screenshot is avaliable.
+Screenshot is avaliable.    
 ![image_step7_sudo_ufw_delete](Images/step7_sudo_ufw_delete.jpg)
 
 
