@@ -61,6 +61,23 @@ Here is sample code to create the file.
   vim [ip_address_of_your_host]
   ```
 
+Here is sample code for server block.  
+  ```bash
+    server {
+        listen 80;
+        listen [::]:80;
+
+        root /var/www/[ip_address_of_your_host]/html;
+        index index.html;
+
+        server_name [ip_address_of_your_host];
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+    }
+  ```
+
 Screenshots of codes in *sever block* are provided below.
 ![image_step3_creating_server_file_wsl](Images/step3_creating_server_file_wsl.jpg)
 
