@@ -26,12 +26,15 @@ Install **NGINX** with the following command:
   ```
 
 You will be prompted to continue after being informed that additional disk space will be used. Type **Y**, and press enter to continue.
+
 ![step1_nginx_install_yes](Images/step1_nginx_install_yes.jpg)
 
 Afterwards, you will be taken to a screen asking which services should be restarted. Press tab to go to ok, and hit enter.
+
 ![step1_press_ok](Images/step1_press_ok.jpg)
 
 You should see a message similar to image below once Nginx is installed:
+
 ![image_step_1nginx_install_ok](Images/step1_nginx_install_ok.jpg)
 
 ## Step 2
@@ -89,6 +92,7 @@ Here is sample code for server block:
   ```
 
 Screenshots of codes in *sever block* are provided below.
+
 ![image_step3_creating_server_file_wsl](Images/step3_creating_server_file_wsl.jpg)
 
 
@@ -106,6 +110,7 @@ To move your file to your server, enter the following command:
 put [name of your file]
 ```
 Screenshot of a successful transfer.
+
 ![image_step4_sftp_Put](Images/step4_sftp_Put.jpg)
 
 Make **directory** for your ***index.html*** inside your server:
@@ -113,7 +118,8 @@ Make **directory** for your ***index.html*** inside your server:
   sudo mkdir -p /var/www/[your_server_ip_address]/html
   ```
 
-Screenshot is avaliable.
+Screenshot is available.
+
 ![image_step4_mkdir_html](Images/step4_mkdir_html.jpg)
 
 Move your ***index.html*** to appropriate directory in your server.
@@ -123,10 +129,11 @@ Move your ***index.html*** to appropriate directory in your server.
 
 Move your ***server file*** to appropriate directory in your server.
   ```bash
-  sudo mv [your_server_file_name] /etc/nginx/sites-avaliable/
+  sudo mv [your_server_file_name] /etc/nginx/sites-available/
   ```
 
-Screenshot is avaliable.
+Screenshot is available.
+
 ![image_step4_move_server_file](Images/step4_move_server_file.jpg)
 
 
@@ -141,19 +148,20 @@ If successful, it should look like the screenshot below.
 
 Add execute **permissions** on related files (server block file)
   ```bash
-  sudo chmod +x /etc/nginx/sites-avaliable/[your_server_ip]
+  sudo chmod +x /etc/nginx/sites-available/[your_server_ip]
   ```
 
-Screenshot is avaliable.
+Screenshot is available.
 ![image_step4_execute_permissions_nginx](Images/step4_execute_permissions_nginx.jpg)
 
 
 Create a**Symbolic link** for related files (server block file)
   ```bash
-  sudo ln -s /etc/nginx/sites-avaliable/[your_server_ip] /etc/nginx/sites-enabled/
+  sudo ln -s /etc/nginx/sites-available/[your_server_ip] /etc/nginx/sites-enabled/
   ```
 
-Screenshots are avaliable.
+Screenshots are available.
+
 ![image_step4_symbolic_link_create](Images/step4_symbolic_link_create.jpg)
 
 ![image_step4_symbolic_link_created](Images/step4_symbolic_link_created.jpg)
@@ -171,7 +179,8 @@ To restart and enable your nginx service, use the code provided below:
   systemctl status nginx.service
   ```
 
-Screenshot is avaliable.
+Screenshot is available.
+
 ![image_step5_restarting_service_nginx](Images/step5_restarting_service_nginx.jpg)
 
 
@@ -192,7 +201,8 @@ Enable **UFW** with this command:
   sudo ufw enable
   ```
 
-Screenshot is avalaible below. When prompted to proceed with the operation, type and enter y to proceed.
+Screenshot is avalaible below. When prompted to proceed with the operation, type and enter Y to proceed:
+
 ![image_step7_sudo_ufw_enable](Images/step7_sudo_ufw_enable.jpg)
 
 Allow HTTP and OpenSSH connections:
@@ -219,6 +229,7 @@ Once you have found which row it appears in, use the following command to remove
   ```
 
 Example of deleting a rule:    
+
 ![image_step7_sudo_ufw_delete](Images/step7_sudo_ufw_delete.jpg)
 
 
@@ -236,6 +247,7 @@ Your UFW status should look similar to this:
 Check if your **HTML document** is accessible by ***ip address*** and ***SSH***
 
 To verify it is available through ***ip address***, visit the HTML document by typing the ip address into your browser of choice:
+
 ![image_step8_HTTP_website_alive](Images/step8_HTTP_website_alive.jpg)
 
 To verify it is available through ***SSH***, attempt to login to your ssh server:
