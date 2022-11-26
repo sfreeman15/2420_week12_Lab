@@ -220,6 +220,14 @@ If successful, it should look like the screenshots below:
 
 ![image_step7_HTTP_Allow](Images/step7_HTTP_Allow.jpg)
 
+Check **UFW** status to verify you have the correct rules:
+  ```bash
+  sudo ufw status
+  ```
+
+Your UFW status should look similar to this:
+![image_step7_sudo_ufw_status](Images/step7_sudo_ufw_status.jpg)
+
 If you accidentally add an unintended rule, you can delete it by specifying which row it appears in with the following command:
 
  ```bash
@@ -235,14 +243,6 @@ Example of deleting a rule:
 
 ![image_step7_sudo_ufw_delete](Images/step7_sudo_ufw_delete.jpg)
 
-
-Check **UFW** status to verify you have the correct rules:
-  ```bash
-  sudo ufw status
-  ```
-
-Your UFW status should look similar to this:
-![image_step7_sudo_ufw_status](Images/step7_sudo_ufw_status.jpg)
 
 
 ## Step 8
