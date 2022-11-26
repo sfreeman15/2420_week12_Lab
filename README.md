@@ -146,16 +146,12 @@ If successful, it should look like the screenshot below.
 ![image_step4_nginx_syntax](Images/step4_nginx_syntax.jpg)
 
 
-Verify permissions are set correctly by checking in the directory of the file with the following command:
-
-
+Verify permissions are set correctly once the files have been moved into the appropriate directory by doing the command below:
 
   ```bash
-  ls -l
+  ls -la
   ```
-
-Permissions should look like the screenshot below:
-
+    
 ![image_step4_execute_permissions_nginx](Images/step4_execute_permissions_nginx.jpg)
 
 
