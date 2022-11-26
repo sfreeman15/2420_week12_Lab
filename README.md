@@ -153,6 +153,8 @@ Verify permissions are set correctly once the files have been moved into the app
   ls -la
   ``` 
 
+The owner should be allowed to read, write, and execute files, and groups and others should only be able to read and execute.
+
 ![image_step4_execute_permissions_nginx](Images/step4_execute_permissions_nginx.jpg)
 
 
