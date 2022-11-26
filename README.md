@@ -176,7 +176,7 @@ Screenshot is avaliable.
 
 Check if your **webiste** is active by typing the ***ip address*** you assigned to it in your browser of choice.
 
-Your website should appear in your browser like in the screenshot provided below:
+Your html document should appear in your browser like in the screenshot provided below:
 ![image_step6_HTTP_Website](Images/step6_HTTP_Website.jpg)
 
 
@@ -230,9 +230,9 @@ Your UFW status should look similar to this:
 
 ## Step 8
 
-Check if your **website** is accessible by ***ip address*** and ***SSH***
+Check if your **HTML document** is accessible by ***ip address*** and ***SSH***
 
-To verify it is available through ***ip address***, visit the website by typing the ip address into your browser of choice:
+To verify it is available through ***ip address***, visit the HTML document by typing the ip address into your browser of choice:
 ![image_step8_HTTP_website_alive](Images/step8_HTTP_website_alive.jpg)
 
 To verify it is available through ***SSH***, attempt to login to your ssh server:
