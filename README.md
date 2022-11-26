@@ -174,7 +174,7 @@ Screenshot is avaliable.
 
 ## Step 6
 
-Check if your **webiste** is active by typing the ***ip address*** you assigned to it in your browser of choice.
+Check if your **HTML document** is active by typing the ***ip address*** you assigned to it in your browser of choice.
 
 Your html document should appear in your browser like in the screenshot provided below:
 ![image_step6_HTTP_Website](Images/step6_HTTP_Website.jpg)
