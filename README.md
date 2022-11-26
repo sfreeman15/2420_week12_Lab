@@ -1,7 +1,6 @@
 # ACIT 2420 Week 12 Lab
 
-## Repository
-
+## Serving an HTML Document and Creating a Firewall
 ### Team Member
 
 + **Simon Freeman**
@@ -9,11 +8,15 @@
 + **Nai Yen Lin**
   + *A01320713*
 
-## Serving an HTML Document and Creating a Firewall
-
 ## Directory Overview
 ![image_directory_overview](Images/directory_overview.png)
 
+## Setup
+Create a new droplet in Digital Ocean called **web-one**
+
+This will be the hostname for your server.
+
+All the files created should be done in your WSL, and brought over to your server.
 
 ## Step 1
 
