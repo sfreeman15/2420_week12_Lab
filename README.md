@@ -143,6 +143,7 @@ Check your **nginx syntax** with the following command to make sure there are no
   ```
 
 If successful, it should look like the screenshot below.
+
 ![image_step4_nginx_syntax](Images/step4_nginx_syntax.jpg)
 
 
@@ -150,8 +151,8 @@ Verify permissions are set correctly once the files have been moved into the app
 
   ```bash
   ls -la
-  ```
-    
+  ``` 
+
 ![image_step4_execute_permissions_nginx](Images/step4_execute_permissions_nginx.jpg)
 
 
