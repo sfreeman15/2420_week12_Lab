@@ -146,12 +146,16 @@ If successful, it should look like the screenshot below.
 ![image_step4_nginx_syntax](Images/step4_nginx_syntax.jpg)
 
 
-Add execute **permissions** on related files (server block file)
+Verify permissions are set correctly by checking in the directory of the file with the following command:
+
+
+
   ```bash
-  sudo chmod +x /etc/nginx/sites-available/[your_server_ip]
+  ls -l
   ```
 
-Screenshot is available.
+Permissions should look like the screenshot below:
+
 ![image_step4_execute_permissions_nginx](Images/step4_execute_permissions_nginx.jpg)
 
 
