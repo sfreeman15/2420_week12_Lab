@@ -21,9 +21,15 @@ Install **NGINX** with the following command:
   ```bash
   sudo apt update && sudo apt install nginx 
   ```
-You should see a message similar to image below once installed:
-![image_step_1nginx_install_ok](Images/step1_nginx_install_ok.jpg)
 
+You will be prompted to continue after being informed that additional disk space will be used. Type **y**, and press enter to continue.
+![step1_nginx_install_yes](Images/step1_nginx_install_yes.jpg)
+
+Afterwards, you will be taken to a screen asking which services should be restarted. Press tab to go to ok, and hit enter.
+![step1_press_ok](Images/step1_press_ok.jpg)
+
+You should see a message similar to image below once Nginx is installed:
+![image_step_1nginx_install_ok](Images/step1_nginx_install_ok.jpg)
 
 ## Step 2
 
