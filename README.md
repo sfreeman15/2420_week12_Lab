@@ -155,7 +155,7 @@ Screenshot is available.
 ![image_step4_execute_permissions_nginx](Images/step4_execute_permissions_nginx.jpg)
 
 
-Create a**Symbolic link** for related files (server block file)
+Create a **Symbolic link** for related files (server block file)
   ```bash
   sudo ln -s /etc/nginx/sites-available/[your_server_ip] /etc/nginx/sites-enabled/
   ```
