@@ -16,11 +16,11 @@
 
 ## Step 1
 
-Install **NGINX** with clear instruction
+Install **NGINX** with the following command:
   ```bash
   sudo apt update && sudo apt install nginx 
   ```
-The results shall be similar to image below
+You should see a message similar to image below once installed:
 ![image_step_1nginx_install_ok](Images/step1_nginx_install_ok.jpg)
 
 
@@ -56,12 +56,12 @@ Screenshots of command are provided below.
 
 Write a **NGINX server block**
 
-Here is sample code to create the file.  
+Here is sample code to create the file:
   ```bash
   vim [ip_address_of_your_host]
   ```
 
-Here is sample code for server block.  
+Here is sample code for server block:
   ```bash
     server {
         listen 80;
@@ -86,14 +86,19 @@ Screenshots of codes in *sever block* are provided below.
 
 Upload the files to **your server** and move them to **appropriate directories**
 
-Use stfp to move files.  
+Use stfp to move files. To access your sftp, enter the following command:
+
   ```bash
   stfp -i ~/.ssh/[ssh_key_file] [your_destination_host]@[your_destination_ip_address]
   ```
+To move your file to your server, enter the following command:
+```bash
+put [name of your file]
+```
 Screenshot of a successful transfer.
 ![image_step4_sftp_Put](Images/step4_sftp_Put.jpg)
 
-Make **directory** for your ***index.html*** 
+Make **directory** for your ***index.html*** inside your server:
   ```bash
   sudo mkdir -p /var/www/[your_server_ip_address]/html
   ```
@@ -101,12 +106,12 @@ Make **directory** for your ***index.html***
 Screenshot is avaliable.
 ![image_step4_mkdir_html](Images/step4_mkdir_html.jpg)
 
-Move your ***index.html*** to appropriate directory
+Move your ***index.html*** to appropriate directory in your server.
   ```bash
   sudo mv index.html /var/www/[your_server_ip_address]/html
   ```
 
-Move your ***server file*** to appropriate directory
+Move your ***server file*** to appropriate directory in your server.
   ```bash
   sudo mv [your_server_file_name] /etc/nginx/sites-avaliable/
   ```
@@ -115,16 +120,16 @@ Screenshot is avaliable.
 ![image_step4_move_server_file](Images/step4_move_server_file.jpg)
 
 
-Check your **nginx syntax** to with command
+Check your **nginx syntax** with the following command to make sure there are no errors in your configuration:
   ```bash
   sudo nginx -t
   ```
 
-Screenshot is avaliable.
+If successful, it should look like the screenshot below.
 ![image_step4_nginx_syntax](Images/step4_nginx_syntax.jpg)
 
 
-Check **permissions** on related files
+Add execute **permissions** on related files (server block file)
   ```bash
   sudo chmod +x /etc/nginx/sites-avaliable/[your_server_ip]
   ```
@@ -133,7 +138,7 @@ Screenshot is avaliable.
 ![image_step4_execute_permissions_nginx](Images/step4_execute_permissions_nginx.jpg)
 
 
-Create **Symbolic link** for related files
+Create a**Symbolic link** for related files (server block file)
   ```bash
   sudo ln -s /etc/nginx/sites-avaliable/[your_server_ip] /etc/nginx/sites-enabled/
   ```
@@ -146,9 +151,9 @@ Screenshots are avaliable.
 
 ## Step 5
 
-Restart **nginx service**
+Restart **nginx service** before enabling it
 
-Codes are provided.
+To restart and enable your nginx service, use the code provided below:
   ```bash
   sudo systemctl daemon-reload
   sudo systemctl restart nginx.service
@@ -162,9 +167,9 @@ Screenshot is avaliable.
 
 ## Step 6
 
-Check if your **webiste** is avaliable by checking ***ip address***
+Check if your **webiste** is active by checking the ***ip address*** you assigned to it in your browser of choice:
 
-Screenshot is avaliable.
+Your website should appear in your browser like in the screenshot provided below:
 ![image_step6_HTTP_Website](Images/step6_HTTP_Website.jpg)
 
 
@@ -172,57 +177,63 @@ Screenshot is avaliable.
 
 Setup **firewall** using **UFW**
 
-Enable **UFW** with command.
+Enable **UFW** with this command:
   ```bash
   sudo ufw enable
   ```
 
-Screenshot is avaliable.
+Screenshot is avalaible below. When prompted to proceed with the operation, type and enter y to proceed.
 ![image_step7_sudo_ufw_enable](Images/step7_sudo_ufw_enable.jpg)
 
-Allowing HTTP and OpenSSH.
+Allow HTTP and OpenSSH connections:
   ```bash
   sudo ufw allow "Nginx HTTP"
   sudo ufw allow "OpenSSH"
   ```
 
-Screenshots are avaliable.
+If successful, it should look like the screenshots below:
+
 ![image_step7_openSSH_allow](Images/step7_openSSH_allow.jpg)
 
 ![image_step7_HTTP_Allow](Images/step7_HTTP_Allow.jpg)
 
-Optional command for deleting existing rules.
+If you accidentally add an unintended rule, you can delete it by specifying which row it appears in with the following command:
+
+ ```bash
+  sudo ufw enable
+  ```
+Once you have found which row it appears in, use the following command to remove the fule:
+
   ```bash
   sudo ufw delete [row index of unwanted rule]
   ```
 
-Screenshot is avaliable.    
+Example of deleting a rule:    
 ![image_step7_sudo_ufw_delete](Images/step7_sudo_ufw_delete.jpg)
 
 
-Check **UFW** status.
+Check **UFW** status to verify you have the correct rules:
   ```bash
   sudo ufw status
   ```
 
-Screenshot is avaliable.
+Your UFW status should look similar to this:
 ![image_step7_sudo_ufw_status](Images/step7_sudo_ufw_status.jpg)
 
 
 ## Step 8
 
-Check if your **webiste** is accessible by ***ip address*** and ***SSH***
+Check if your **website** is accessible by ***ip address*** and ***SSH***
 
-Access by ***ip address***
+To verify it is available through ***ip address***, visit the website by typing the ip address into your browser of choice:
 ![image_step8_HTTP_website_alive](Images/step8_HTTP_website_alive.jpg)
 
-Access by ***SSH***
+To verify it is available through ***SSH***, attempt to login to your ssh server:
   ```bash
   ssh -i ~/.ssh/[ssh_key_file] [your_ssh_host]@[your_ssh_ip_address]
   ```
 
-Screenshot is avaliable.
 ![image_step8_ssh_login](Images/step8_ssh_login.jpg)
 
 
-
+If you have completed all these steps, everything should be set up correctly.
